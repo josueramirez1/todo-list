@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui;
+  height: 100vh;
+  background-image: url("./assets/images/bigsur.jpg");
+  background-repeat: no-repeat;
+  background-position: center / cover;
+  position: relative;
+}
+
+#main {
+  height: 80%;
+  width: min(80%, 1000px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+}
+
+#aside {
+  flex: 1;
+  background-color: rgb(190, 189, 189);
+}
+
+#section {
+  flex: 2;
+  background-color: rgb(230, 230, 233);
+}
