@@ -1,3 +1,5 @@
+import defaultItems from "./default.js";
+
 export default function load() {
   //select body
   const body = document.querySelector("body");
@@ -12,4 +14,7 @@ export default function load() {
   //append
   body.appendChild(main);
   main.append(aside, section);
+  //append divs  to aside
+  const { inbox, today, upcoming, anytime, someday } = defaultItems();
+  aside.append(inbox, today, upcoming, anytime, someday);
 }
