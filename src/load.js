@@ -1,4 +1,4 @@
-import defaultItems from "./default.js";
+import defaultItems from "./defaultItems.js";
 
 export default function load() {
   //select body
