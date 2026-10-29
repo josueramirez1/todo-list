@@ -41,5 +41,11 @@ export default function defaultItems() {
   somedayI.classList.add("fa-solid", "fa-dog");
   someday.append(somedayI, somedayS);
 
-  return { inbox, today, upcoming, anytime, someday };
+  //new list icon
+  const newListBtnS = document.createElement("span");
+  const newListBtnI = document.createElement("i");
+  newListBtnS.textContent = "New List";
+  newListBtnI.classList.add("fa-solid", "fa-list");
+
+  return { inbox, today, upcoming, anytime, someday, newListBtnI, newListBtnS };
 }

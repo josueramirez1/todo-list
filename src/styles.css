@@ -1,7 +1,7 @@
 * {
   margin: 0;
-  box-sizing: border-box;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -9,7 +9,7 @@ body {
   height: 100vh;
   background-image: url("./assets/images/bigsur.jpg");
   background-repeat: no-repeat;
-  background-position: center / cover;
+  background-position: center;
   position: relative;
 }
 
@@ -28,9 +28,47 @@ body {
 #aside {
   flex: 1;
   background-color: rgb(190, 189, 189);
+  padding-inline-start: 20px;
+  padding-block: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#lists {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#lists div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#lists div i {
+  height: 16px;
+  width: 16px;
+}
+
+#new-list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#lists .fa-solid,
+#lists span,
+#new-list .fa-solid,
+#new-list span {
+  cursor: pointer;
 }
 
 #section {
   flex: 2;
   background-color: rgb(230, 230, 233);
+  padding-block: 40px;
+  padding-inline: 20px;
 }
