@@ -1,32 +1,29 @@
-import defaultItems from "./defaultItems.js";
-import inboxPage from "./inbox.js";
+import createNames from "./defaultLists/createNames.js";
+import createMain from "./sections/createMain.js";
+import createAside from "./sections/createAside.js";
+import createSection from "./sections/createSection.js";
+import createNewList from "./sections/createNewList.js";
+import createList from "./sections/createList.js";
+import inboxPage from "./inboxPage.js";
 
 export default function load() {
-  //select body
+  //call functions
   const body = document.querySelector("body");
-  //create html tags
-  const main = document.createElement("main");
-  const aside = document.createElement("aside");
-  const lists = document.createElement("div");
-  const newListDiv = document.createElement("div");
-  const section = document.createElement("section");
-  //create id's or class
-  main.id = "main";
-  aside.id = "aside";
-  section.id = "section";
-  lists.id = "lists";
-  newListDiv.id = "new-list";
+  const main = createMain();
+  const aside = createAside();
+  const section = createSection();
+  const lists = createList();
+  const newList = createNewList();
+  const { inboxName, todayName, upcomingName, anytimeName, somedayName } =
+    createNames();
   //append
   body.appendChild(main);
   main.append(aside, section);
-  //append divs  to aside
-  const { inbox, today, upcoming, anytime, someday, newListBtnI, newListBtnS } =
-    defaultItems();
-  lists.append(inbox, today, upcoming, anytime, someday);
-  newListDiv.append(newListBtnI, newListBtnS);
-  aside.append(lists, newListDiv);
+  aside.append(lists, newList);
+  lists.append(inboxName, todayName, upcomingName, anytimeName, somedayName);
 
   //append title to current list opened
+  //this is temporary
   const title = inboxPage();
   section.append(title);
 }

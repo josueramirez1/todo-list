@@ -67,8 +67,8 @@ body {
 }
 
 #section {
-  flex: 2;
-  background-color: rgb(230, 230, 233);
+  flex: 3;
+  background-color: rgb(243, 243, 245);
   padding-block: 40px;
   padding-inline: 20px;
 }
