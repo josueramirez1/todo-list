@@ -4,6 +4,7 @@ export default function createAnytimeName() {
   const anytimeI = document.createElement("i");
   anytime.classList.add("anytime");
   anytimeS.textContent = "Anytime";
+  anytimeS.classList.add("list-span");
   anytimeI.classList.add("fa-solid", "fa-house");
   anytime.append(anytimeI, anytimeS);
   return anytime;

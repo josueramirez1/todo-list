@@ -3,6 +3,7 @@ export default function createSomedayName() {
   const somedayS = document.createElement("span");
   const somedayI = document.createElement("i");
   somedayS.textContent = "Someday";
+  somedayS.classList.add("list-span");
   someday.classList.add("someday");
   somedayI.classList.add("fa-solid", "fa-dog");
   someday.append(somedayI, somedayS);

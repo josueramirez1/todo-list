@@ -3,6 +3,7 @@ export default function createNewList() {
   const newListBtnS = document.createElement("span");
   const newListBtnI = document.createElement("i");
   newListBtnS.textContent = "New List";
+  newListBtnS.classList.add("list-span");
   newListBtnI.classList.add("fa-solid", "fa-plus");
   newListDiv.id = "new-list";
   newListDiv.append(newListBtnI, newListBtnS);
