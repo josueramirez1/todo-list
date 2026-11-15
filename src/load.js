@@ -4,7 +4,7 @@ import createAside from "./sections/createAside.js";
 import createSection from "./sections/createSection.js";
 import createNewList from "./sections/createNewList.js";
 import createList from "./sections/createList.js";
-import inboxPage from "./inboxPage.js";
+import openListItem from "./defaultLists/openListItem.js";
 
 export default function load() {
   //call functions
@@ -22,8 +22,6 @@ export default function load() {
   aside.append(lists, newList);
   lists.append(inboxName, todayName, upcomingName, anytimeName, somedayName);
 
-  //append title to current list opened
-  //this is temporary
-  const title = inboxPage();
-  section.append(title);
+  const { listTitle, listItems } = openListItem();
+  section.append(listTitle, listItems);
 }

@@ -72,3 +72,9 @@ body {
   padding-block: 40px;
   padding-inline: 20px;
 }
+
+#section h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
