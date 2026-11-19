@@ -2,7 +2,12 @@ const dataListArray = [
   {
     title: "Inbox",
     fontAwesomeClass: ["fa-solid", "fa-inbox"],
-    listItems: ["Check my email", "Go to the store!", "Apply for tuition"],
+    listItems: [
+      "Check my email",
+      "Go to the store!",
+      "Apply for tuition",
+      "Get Habit burger",
+    ],
   },
   {
     title: "Today",
