@@ -1,4 +1,4 @@
-import dataListArray from "../dataLists/dataListArray.js";
+import getDataList from "../dataLists/dataListArray.js";
 import createListItems from "./createListItems.js";
 import createListTitle from "./createListTitle.js";
 
@@ -9,7 +9,8 @@ export default function openListItem() {
   console.log(todo);
   //initial default
   if (!todo) {
-    item = dataListArray.find((dataItem) => {
+    item = getDataList();
+    item.find((dataItem) => {
       if (dataItem.title === "Inbox") {
         return dataItem;
       }
