@@ -1,3 +1,5 @@
+import openListItems from "./defaultLists/openListItems.js";
+
 export default function clickList() {
   document.addEventListener("click", (e) => {
     if (
@@ -7,6 +9,7 @@ export default function clickList() {
       //i want to save the name of the link i clicked
       const clickedName = e.target.parentNode.classList.value;
       console.log(clickedName);
+      openListItems(clickedName);
     }
   });
 }

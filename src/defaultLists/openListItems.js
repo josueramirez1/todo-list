@@ -1,19 +1,39 @@
 import createLocalStorage from "./createLocalStorage.js";
-import createListItems from "./createListItems.js";
-import createListTitle from "./createListTitle.js";
+import createSectionItems from "./createSectionItems.js";
+import createSectionTitle from "./createSectionTitle.js";
+import dataListArray from "../dataLists/dataListArray.js";
 
-export default function openListItems() {
+export default function openListItems(clickedItem = "Inbox") {
   let item;
-  const items = createLocalStorage();
-
-  item = items.find((dataItem) => {
-    if (dataItem.title === "Inbox") {
-      return dataItem;
+  //loop to find any values already in local storage
+  let itemsInLocalStorage = [];
+  for (let i = 0; i < dataListArray.length; i++) {
+    let values = localStorage.getItem(dataListArray[i].title);
+    if (!values) {
+      console.log("true");
+      continue;
+    } else {
+      itemsInLocalStorage.push(JSON.parse(values));
     }
-  });
+  }
+  //conditional statement
+  //if no local storage, create it and load the default ui
+  if (itemsInLocalStorage.length <= 0) {
+    createLocalStorage();
+    item = dataListArray.find((item) => item.title === clickedItem);
+  }
 
-  const listTitle = createListTitle(item);
-  const listItems = createListItems(item);
+  //if there is data in the itemInLocalStorage variable then update them in the dataListArray
+  //also make the default ui appear for now
+  if (itemsInLocalStorage.length > 0) {
+    itemsInLocalStorage.forEach((arr, index) => {
+      dataListArray[index].listItems = arr;
+    });
+    item = dataListArray.find((item) => item.title === clickedItem);
+  }
 
-  return { listTitle, listItems };
+  const sectionTitle = createSectionTitle(item);
+  const sectionItems = createSectionItems(item);
+
+  return { sectionTitle, sectionItems };
 }

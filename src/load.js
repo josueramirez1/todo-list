@@ -26,12 +26,12 @@ export default function load() {
     const listNameIcon = document.createElement("i");
     listNameSpan.textContent = name.title;
     listNameSpan.classList.add("list-span");
-    listNameDiv.classList.add("inbox");
+    listNameDiv.classList.add(name.title.toLocaleLowerCase());
     name.fontAwesomeClass.forEach((icon) => listNameIcon.classList.add(icon));
     listNameDiv.append(listNameIcon, listNameSpan);
     lists.append(listNameDiv);
   });
 
-  const { listTitle, listItems } = openListItems();
-  section.append(listTitle, listItems);
+  const { sectionTitle, sectionItems } = openListItems();
+  section.append(sectionTitle, sectionItems);
 }

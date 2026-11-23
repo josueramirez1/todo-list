@@ -7,7 +7,7 @@ const dataListArray = [
   {
     title: "Today",
     fontAwesomeClass: [, "fa-solid", "fa-sun"],
-    listItems: [],
+    listItems: ["turkey time!"],
   },
   {
     title: "Upcoming",

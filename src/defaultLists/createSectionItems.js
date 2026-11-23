@@ -22,7 +22,6 @@ export default function createListItems(item) {
     listItems.appendChild(listItem);
   });
 
-  console.log(item.listItems);
   const blankItem = createBlankItems(item.listItems.length);
   listItems.appendChild(blankItem);
 
