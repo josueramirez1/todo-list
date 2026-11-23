@@ -4,18 +4,15 @@ import createListTitle from "./createListTitle.js";
 
 export default function openListItem() {
   let item;
-  const todo = localStorage.getItem("todos");
 
-  console.log(todo);
   //initial default
-  if (!todo) {
-    item = getDataList();
-    item.find((dataItem) => {
-      if (dataItem.title === "Inbox") {
-        return dataItem;
-      }
-    });
-  }
+
+  item = getDataList();
+  item.find((dataItem) => {
+    if (dataItem.title === "Inbox") {
+      return dataItem;
+    }
+  });
 
   const listTitle = createListTitle(item);
   const listItems = createListItems(item);
