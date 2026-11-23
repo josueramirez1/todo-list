@@ -1,10 +1,11 @@
-import createNames from "./defaultLists/createNames.js";
+// import createNames from "./defaultLists/createNames.js";
 import createMain from "./sections/createMain.js";
 import createAside from "./sections/createAside.js";
 import createSection from "./sections/createSection.js";
 import createNewList from "./sections/createNewList.js";
 import createList from "./sections/createList.js";
-import openListItem from "./defaultLists/openListItem.js";
+import openListItems from "./defaultLists/openListItems.js";
+import dataListArray from "./dataLists/dataListArray.js";
 
 export default function load() {
   //call functions
@@ -14,14 +15,23 @@ export default function load() {
   const section = createSection();
   const lists = createList();
   const newList = createNewList();
-  const { inboxName, todayName, upcomingName, anytimeName, somedayName } =
-    createNames();
+
   //append
   body.appendChild(main);
   main.append(aside, section);
   aside.append(lists, newList);
-  lists.append(inboxName, todayName, upcomingName, anytimeName, somedayName);
+  dataListArray.forEach((name) => {
+    const listNameDiv = document.createElement("div");
+    const listNameSpan = document.createElement("span");
+    const listNameIcon = document.createElement("i");
+    listNameSpan.textContent = name.title;
+    listNameSpan.classList.add("list-span");
+    listNameDiv.classList.add("inbox");
+    name.fontAwesomeClass.forEach((icon) => listNameIcon.classList.add(icon));
+    listNameDiv.append(listNameIcon, listNameSpan);
+    lists.append(listNameDiv);
+  });
 
-  const { listTitle, listItems } = openListItem();
+  const { listTitle, listItems } = openListItems();
   section.append(listTitle, listItems);
 }

@@ -1,3 +1,5 @@
+import createBlankItems from "./createBlankItems.js";
+
 export default function createListItems(item) {
   const listItems = document.createElement("div");
 
@@ -19,6 +21,10 @@ export default function createListItems(item) {
     listItem.append(input, label);
     listItems.appendChild(listItem);
   });
+
+  console.log(item.listItems);
+  const blankItem = createBlankItems(item.listItems.length);
+  listItems.appendChild(blankItem);
 
   return listItems;
 }

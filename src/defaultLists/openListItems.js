@@ -1,10 +1,10 @@
-import getDataList from "./getDataList.js";
+import createLocalStorage from "./createLocalStorage.js";
 import createListItems from "./createListItems.js";
 import createListTitle from "./createListTitle.js";
 
-export default function openListItem() {
+export default function openListItems() {
   let item;
-  const items = getDataList();
+  const items = createLocalStorage();
 
   item = items.find((dataItem) => {
     if (dataItem.title === "Inbox") {
