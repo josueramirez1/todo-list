@@ -1,14 +1,12 @@
-import getDataList from "../dataLists/dataListArray.js";
+import getDataList from "./getDataList.js";
 import createListItems from "./createListItems.js";
 import createListTitle from "./createListTitle.js";
 
 export default function openListItem() {
   let item;
+  const items = getDataList();
 
-  //initial default
-
-  item = getDataList();
-  item.find((dataItem) => {
+  item = items.find((dataItem) => {
     if (dataItem.title === "Inbox") {
       return dataItem;
     }
@@ -17,7 +15,5 @@ export default function openListItem() {
   const listTitle = createListTitle(item);
   const listItems = createListItems(item);
 
-  console.log(item);
-  localStorage.setItem(item.title, item.listItems);
   return { listTitle, listItems };
 }
