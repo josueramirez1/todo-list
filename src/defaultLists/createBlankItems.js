@@ -11,7 +11,7 @@ export default function createBlankItems(index) {
   input.value = "item";
 
   // label.setAttribute("for", `item-number-${index}`);
-  label.contentEditable = "true";
+  label.contentEditable = "false";
   label.textContent = "";
 
   blankItem.append(input, label);

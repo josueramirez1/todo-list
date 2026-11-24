@@ -20,11 +20,11 @@ export default function clickList() {
     }
 
     //if user clicks on list item  user gets to edit and updates array
-    // if (e.target.closest(".list-item")) {
-    //   console.log("true");
-    //   e.target.addEventListener("change", (e) => {
-    //     console.log(e.target);
-    //   });
-    // }
+    if (e.target.closest(".list-item")) {
+      const parent = e.target.closest(".list-item");
+      const child = parent.querySelector("label");
+      child.contentEditable = "true";
+      child.focus();
+    }
   });
 }

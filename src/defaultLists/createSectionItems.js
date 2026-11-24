@@ -16,7 +16,7 @@ export default function createSectionItems(item) {
     input.value = "item";
 
     // label.setAttribute("for", `item-number-${index}`);
-    label.contentEditable = "true";
+    label.contentEditable = "false";
     label.textContent = item;
     listItem.append(input, label);
     listItems.appendChild(listItem);
