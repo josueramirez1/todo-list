@@ -31,7 +31,6 @@ export default function load() {
     listNameDiv.append(listNameIcon, listNameSpan);
     lists.append(listNameDiv);
   });
-
   const { sectionTitle, sectionItems } = openListItems();
   section.append(sectionTitle, sectionItems);
 }

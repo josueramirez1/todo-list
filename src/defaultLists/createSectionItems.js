@@ -1,8 +1,7 @@
 import createBlankItems from "./createBlankItems.js";
 
-export default function createListItems(item) {
+export default function createSectionItems(item) {
   const listItems = document.createElement("div");
-
   //list items
   listItems.classList.add("list-items");
   item.listItems.forEach((item, index) => {
@@ -12,11 +11,12 @@ export default function createListItems(item) {
     const label = document.createElement("label");
 
     input.type = "checkbox";
-    input.id = `item-number-${index}`;
+    // input.id = `item-number-${index}`;
     input.name = "item";
     input.value = "item";
 
-    label.setAttribute("for", `item-number-${index}`);
+    // label.setAttribute("for", `item-number-${index}`);
+    label.contentEditable = "true";
     label.textContent = item;
     listItem.append(input, label);
     listItems.appendChild(listItem);

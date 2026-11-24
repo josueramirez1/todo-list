@@ -6,11 +6,12 @@ export default function createBlankItems(index) {
   blankItem.classList.add("list-item");
 
   input.type = "checkbox";
-  input.id = `item-number-${index}`;
+  // input.id = `item-number-${index}`;
   input.name = "item";
   input.value = "item";
 
-  label.setAttribute("for", `item-number-${index}`);
+  // label.setAttribute("for", `item-number-${index}`);
+  label.contentEditable = "true";
   label.textContent = "";
 
   blankItem.append(input, label);

@@ -11,6 +11,5 @@ export default function createListTitle(item) {
     listTitleI.classList.add(element);
   });
   listTitle.append(listTitleI, listTitleS);
-
   return listTitle;
 }

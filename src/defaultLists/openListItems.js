@@ -10,7 +10,6 @@ export default function openListItems(clickedItem = "Inbox") {
   for (let i = 0; i < dataListArray.length; i++) {
     let values = localStorage.getItem(dataListArray[i].title);
     if (!values) {
-      console.log("true");
       continue;
     } else {
       itemsInLocalStorage.push(JSON.parse(values));
