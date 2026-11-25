@@ -1,5 +1,4 @@
 import openListItems from "./defaultLists/openListItems.js";
-import createSection from "./sections/createSection.js";
 
 export default function clickList() {
   document.addEventListener("click", (e) => {
@@ -23,8 +22,19 @@ export default function clickList() {
     if (e.target.closest(".list-item")) {
       const parent = e.target.closest(".list-item");
       const child = parent.querySelector("label");
+      let initialContent = "";
       child.contentEditable = "true";
+      child.addEventListener(
+        "focus",
+        () => (initialContent = child.textContent),
+      );
+      child.addEventListener("blur", () => {
+        if (child.textContent !== initialContent) {
+          console.log("changed to", child.textContent);
+        }
+      });
       child.focus();
+      localStorage.setItem;
     }
   });
 }
