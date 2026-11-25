@@ -79,24 +79,24 @@ body {
   gap: 12px;
 }
 
-#section .list-items {
+#section .section-list-items {
   display: flex;
   flex-direction: column;
   margin-block-start: 20px;
 }
 
-#section .list-item {
+#section .section-list-item {
   display: flex;
   gap: 10px;
   height: 40px;
   cursor: pointer;
 }
 
-#section .list-item input,
-#section .list-item label {
+#section .section-list-item input,
+#section .section-list-item label {
   cursor: pointer;
 }
 
-#section .list-item label {
+#section .section-list-item label {
   align-self: center;
 }

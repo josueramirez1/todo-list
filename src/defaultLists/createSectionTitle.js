@@ -6,7 +6,7 @@ export default function createListTitle(item) {
   //title
   listTitle.classList.add(item.title.toLowerCase());
   listTitleS.textContent = item.title;
-  listTitleS.classList.add("list-span");
+  listTitleS.classList.add("section-list-span");
   item.fontAwesomeClass.forEach((element) => {
     listTitleI.classList.add(element);
   });

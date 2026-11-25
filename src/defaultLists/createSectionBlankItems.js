@@ -1,9 +1,9 @@
-export default function createBlankItems(index) {
+export default function createSectionBlankItems(index) {
   const blankItem = document.createElement("div");
   const input = document.createElement("input");
   const label = document.createElement("label");
 
-  blankItem.classList.add("list-item");
+  blankItem.classList.add("section-list-item");
 
   input.type = "checkbox";
   // input.id = `item-number-${index}`;

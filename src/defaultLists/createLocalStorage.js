@@ -10,6 +10,7 @@ function createLocalStorage() {
       dataListArray[i].title,
       JSON.stringify(dataListArray[i].listItems),
     );
+    console.log(dataListArray[i].listItems);
   }
 }
 

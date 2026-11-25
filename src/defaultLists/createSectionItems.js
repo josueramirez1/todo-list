@@ -1,12 +1,12 @@
-import createBlankItems from "./createBlankItems.js";
+import createSectionBlankItems from "./createSectionBlankItems.js";
 
 export default function createSectionItems(item) {
   const listItems = document.createElement("div");
   //list items
-  listItems.classList.add("list-items");
+  listItems.classList.add("section-list-items");
   item.listItems.forEach((item, index) => {
     const listItem = document.createElement("div");
-    listItem.classList.add("list-item");
+    listItem.classList.add("section-list-item");
     const input = document.createElement("input");
     const label = document.createElement("label");
 
@@ -22,7 +22,7 @@ export default function createSectionItems(item) {
     listItems.appendChild(listItem);
   });
 
-  const blankItem = createBlankItems(item.listItems.length);
+  const blankItem = createSectionBlankItems(item.listItems.length);
   listItems.appendChild(blankItem);
 
   return listItems;
