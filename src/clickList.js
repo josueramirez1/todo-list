@@ -36,8 +36,8 @@ export default function clickList() {
             document.querySelector(".section-list-span").textContent;
           const labels = [...document.querySelectorAll("label")];
           const updatedLabels = labels.map((label) => label.textContent);
-          console.log(updatedLabels);
           localStorage.setItem(title, JSON.stringify(updatedLabels));
+          console.log(updatedLabels);
         }
       });
       child.focus();

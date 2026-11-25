@@ -2,6 +2,7 @@ import createLocalStorage from "./createLocalStorage.js";
 import createSectionItems from "./createSectionItems.js";
 import createSectionTitle from "./createSectionTitle.js";
 import dataListArray from "../dataLists/dataListArray.js";
+import createSectionBlankItems from "./createSectionBlankItems.js";
 
 export default function openListItems(clickedItem = "Inbox") {
   let item;
@@ -20,6 +21,8 @@ export default function openListItems(clickedItem = "Inbox") {
   if (itemsInLocalStorage.length <= 0) {
     createLocalStorage();
     item = dataListArray.find((item) => item.title === clickedItem);
+    console.log(item);
+    createSectionBlankItems(item);
   }
 
   //if there is data in the itemInLocalStorage variable then update them in the dataListArray

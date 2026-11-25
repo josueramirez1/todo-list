@@ -1,29 +1,30 @@
 import createSectionBlankItems from "./createSectionBlankItems.js";
 
 export default function createSectionItems(item) {
-  const listItems = document.createElement("div");
+  let listDiv = document.createElement("div");
+  listDiv.classList.add("section-list-items");
   //list items
-  listItems.classList.add("section-list-items");
-  item.listItems.forEach((item, index) => {
-    const listItem = document.createElement("div");
-    listItem.classList.add("section-list-item");
-    const input = document.createElement("input");
-    const label = document.createElement("label");
 
-    input.type = "checkbox";
-    // input.id = `item-number-${index}`;
-    input.name = "item";
-    input.value = "item";
+  if (item.listItems.length > 0) {
+    item.listItems.forEach((text) => {
+      const listItem = document.createElement("div");
+      listItem.classList.add("section-list-item");
+      const input = document.createElement("input");
+      const label = document.createElement("label");
 
-    // label.setAttribute("for", `item-number-${index}`);
-    label.contentEditable = "false";
-    label.textContent = item;
-    listItem.append(input, label);
-    listItems.appendChild(listItem);
-  });
+      input.type = "checkbox";
+      input.name = "item";
+      input.value = "item";
 
-  const blankItem = createSectionBlankItems(item.listItems.length);
-  listItems.appendChild(blankItem);
+      label.contentEditable = "false";
+      label.textContent = "" || text;
+      listItem.append(input, label);
+      listDiv.appendChild(listItem);
+    });
+  } else {
+    const blankItems = createSectionBlankItems(item);
+    listDiv.appendChild(blankItems);
+  }
 
-  return listItems;
+  return listDiv;
 }
